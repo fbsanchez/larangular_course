@@ -1,0 +1,64 @@
+<div class="mt-4 col-8 offset-2">
+  <div class="card">
+    <div class="card-header">
+      Reset password
+    </div>
+    <div class="card-body">
+
+
+      <form #ResetPasswordForm=ngForm (ngSubmit)="onSubmit()">
+
+        <div class="alert alert-danger" [hidden]="!error.message">
+          {{error.message}}
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3"
+            class="text-nowrap col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" name="email"
+              id="inputEmail3" placeholder="Email" [(ngModel)]="form.email"
+              required>
+            <div class="alert alert-danger" [hidden]="!error.email">
+              {{error.email}}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3"
+            class="text-nowrap col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control" name="password"
+              id="inputPassword3" placeholder="password"
+              [(ngModel)]="form.password" required>
+            <div class="alert alert-danger" [hidden]="!error.password">
+              {{error.password}}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3_confirmation"
+            class="text-nowrap col-sm-3 col-form-label">Confirm password</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control"
+              name="password_confirmation" id="inputPassword3_confirmation"
+              placeholder="Password confirmation"
+              [(ngModel)]="form.password_confirmation" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-9 offset-3">
+            <button type="submit" class="btn btn-primary"
+              [disabled]="!ResetPasswordForm.valid">Change password</button>
+
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
